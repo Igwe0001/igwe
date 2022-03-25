@@ -4,15 +4,28 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 body {
   width: 100%;
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 header {
-  /* outline: 1px solid red; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+}
+
+header.sticky {
+  box-shadow: 0 1px 4px hsla(0, 4%, 15%, .1);
 }
 
 header .header {
@@ -25,7 +38,7 @@ header .header {
   /* position: relative; */
 }
 
-.over {
+.container {
   width: 90%;
   max-width: 1000px;
 }
@@ -59,6 +72,7 @@ nav {
   transition: all .3s ease-out;
   background-color: white;
   box-shadow: 0px 0px 10px gray;
+  z-index: 1;
   transform: translateX(100%);
 }
 
@@ -109,6 +123,163 @@ nav a {
   transform: rotate(-43deg);
   transform-origin: 0px;
 }
+
+main {
+  position: relative;
+}
+
+section {
+  margin: 0 auto;
+  height: 100vh;
+  padding: 4.5rem 0 1rem;
+}
+
+
+footer {
+  width: 100%;
+  height: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media screen and (min-width: 769px) {
