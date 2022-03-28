@@ -5,6 +5,8 @@
 }
 
 html {
+  scrollbar-width: thin;
+  scrollbar-color: blue;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -25,7 +27,8 @@ header {
 }
 
 header.sticky {
-  box-shadow: 0 1px 4px hsla(0, 4%, 15%, .1);
+  box-shadow: 0 1px 4px hsla(0, 4%, 15%, 0.1);
+  background-color: white;
 }
 
 header .header {
@@ -40,7 +43,7 @@ header .header {
 
 .container {
   width: 90%;
-  max-width: 1000px;
+  max-width: 1150px;
 }
 
 .logo {
@@ -69,7 +72,7 @@ nav {
   left: 50%;
   width: 50%;
   height: 100vh;
-  transition: all .3s ease-out;
+  transition: all 0.3s ease-out;
   background-color: white;
   box-shadow: 0px 0px 10px gray;
   z-index: 1;
@@ -90,11 +93,10 @@ nav ul {
 }
 
 nav a {
-    text-decoration: none;
-    color: blue;
-    font-weight: bold;
-    font-size: 1.5rem;
-    
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .hamburger {
@@ -102,11 +104,11 @@ nav a {
 }
 
 .line {
-    width: 30px;
-    height: 3px;
-    margin: 7px 0;
-    background-color: blue;
-    transition: all .3s ease-out;
+  width: 30px;
+  height: 3px;
+  margin: 7px 0;
+  background-color: blue;
+  transition: all 0.3s ease-out;
 }
 
 .line1.trans {
@@ -130,155 +132,219 @@ main {
 
 section {
   margin: 0 auto;
-  height: 100vh;
+  /* height: 100vh; */
   padding: 4.5rem 0 1rem;
+  display: grid;
+  place-items: center;
 }
+
+.left {
+  width: 40px;
+  position: fixed;
+  bottom: 0;
+  display: none;
+  right: auto;
+  z-index: 10;
+  color: blue;
+}
+
+.left .fa {
+  color: blue;
+}
+
+.left ul {
+  display: flex;
+  flex-direction: column;
+  -moz-box-align: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.left ul li {
+  margin-bottom: 20px;
+}
+
+.left ul::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0px auto;
+  background-color: blue;
+}
+
+.right {
+  width: 40px;
+  position: fixed;
+  bottom: 0px;
+  left: auto;
+  display: none;
+  z-index: 10;
+  color: var(--light-slate);
+}
+
+.email-social {
+  display: flex;
+  flex-direction: column;
+  -moz-box-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.email-social a {
+  margin: 20px auto;
+  text-decoration: none;
+  padding: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  writing-mode: vertical-rl;
+}
+
+.email-social::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0px auto;
+  background-color: blue;
+}
+
+.section-1 {
+  color: blue;
+  height: 100vh;
+}
+
+.section-1 span {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin: 1rem 0;
+  display: inline-block;
+}
+
+.section-1 h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.text-1 {
+  margin: 20px 0;
+}
+
+.section-1 .text-2 {
+  font-size: clamp(1.3rem, 5vw, 1.5rem);
+  margin: 20px 0 ;
+}
+
+.arrow-down {
+  width: 50px;
+  height: 50px;
+  border: 1px solid red;
+  margin: 20px auto;
+}
+
+.section-2 {
+  color: blue;
+}
+
+.section-2 h1 {
+  font-size: clamp(1.3rem, 5vw, 3rem);
+  text-decoration: underline;
+  margin: 20px 0;
+}
+
+.section-2 img {
+  border-radius: 10px;
+}
+
+.section-2 p {
+  font-size: clamp(1.3rem, 5vw, 1.5rem);
+}
+
+.technologies h3 {
+  font-size: clamp(1.3rem, 5vw, 2.5rem);
+  text-align: center;
+  margin: 20px 0;
+  text-decoration: underline;
+}
+
+.tech-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 1fr);
+}
+
+.tech {
+  outline: 1px solid ;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 footer {
   width: 100%;
   height: 200px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -292,21 +358,52 @@ footer {
     width: initial;
     outline: none;
     box-shadow: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  nav ul {
+    flex-direction: row;
+  }
+
+  nav a {
+    font-size: 1.3rem;
+  }
+
+
+  .left {
+  left: 0px;
+  display: block;
 }
 
-.hamburger {
-  display: none;
-}
-
-nav ul {
-  flex-direction: row;
-
-}
-
-nav a {
-  font-size: 1.3rem;
+.right {
+  right: 0px;
+  display: block;
 }
 
 
+}
+
+@media screen and (min-width: 960px) {
+    .left {
+  left: 20px;
+}
+
+.right {
+  right: 20px;
+}
+}
+
+@media screen and (min-width: 1500px) {
+  
+    .left {
+  left: 50px;
+}
+
+.right {
+  right: 50px;
+}
 
 }
