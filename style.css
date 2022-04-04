@@ -369,6 +369,7 @@ section {
   right: 0;
   text-align: center;
   z-index: 10;
+  display: none;
 }
 
 .arrow-down i {
@@ -619,6 +620,10 @@ button a {
 
   .section-1-socials {
     display: none;
+  }
+
+  .arrow-down {
+    display: inline-block;
   }
 }
 
