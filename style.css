@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 :root {
@@ -11,7 +12,7 @@
 
 
   /* Body */
-
+  --loader-bg: #1c273a; 
   --Background-color: #2d2e32;
   --box-shadow: rgb(17, 15, 15);
 
@@ -35,7 +36,53 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   background-color: var(--Background-color);
+}
 
+.intro {
+  position: fixed;
+  z-index: 1000000;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--Background-color);
+  transition: 1s;
+}
+
+.logo-header {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.intro-logo {
+  position: relative;
+  display: inline-block;
+  bottom: -20px;
+  opacity: 0;
+}
+
+.intro-logo.acting{
+  bottom: 0;
+  opacity: 1;
+  transition: ease-in-out 0.5s;
+}
+
+.intro-logo.fade {
+  bottom: 150px;
+  opacity: 0;
+  transition: ease-in-out 0.5;
+}
+
+
+#preloader {
+  background: var(--loader-bg) url(/image/a2dc9668f2cf170fe3efeb263128b0e7.gif) no-repeat center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100000;
 }
 
 header {
@@ -53,6 +100,7 @@ header.sticky {
 }
 
 header .header {
+  animation-delay: 2.7s;
   height: 70px;
   margin: 0 auto;
   /* outline: 1px solid; */
@@ -120,8 +168,13 @@ nav a {
   font-size: 1.5rem;
 }
 
-nav a:hover {
+/* nav a:hover {
   color: var(--title);
+  transition: all .2s ease;
+} */
+
+.active, .link:hover {
+   color: var(--title);
   transition: all .2s ease;
 }
 
@@ -162,6 +215,18 @@ section {
   padding: 4.5rem 0 1rem;
   display: grid;
   place-items: center;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.reveal.show {
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 .left {
@@ -257,9 +322,11 @@ section {
   color: blue;
   min-height: 100vh;
   height: 100%;
+  position: relative;
 }
 
 .section-1 span {
+  animation-delay: 2.9s;
   font-size: clamp(1.5rem, 5vw, 2rem);
   margin: 1rem 0;
   display: inline-block;
@@ -269,6 +336,11 @@ section {
 .section-1 h1 {
   font-size: clamp(2rem, 5vw, 4rem);
   color: var(--title);
+  animation-delay: 3.1s;
+}
+
+.sh1 {
+  animation-delay: 3.3s;
 }
 
 .text-1 {
@@ -276,6 +348,7 @@ section {
 }
 
 .section-1 .text-2 p {
+  animation-delay: 3.5s;
   font-size: clamp(1.3rem, 5vw, 1.5rem);
   margin: 20px 0;
   line-height: 35px;
@@ -283,6 +356,7 @@ section {
 }
 
 .section-1-socials {
+  animation-delay: 3.7s;
   margin: 30px 0;
 }
 
@@ -303,11 +377,30 @@ section {
   color: var(--title);
 }
 
+.animate-pop-in {
+  animation: pop-in .6s ease-out forwards;
+  opacity: 0;
+}
+
 .arrow-down {
-  width: 50px;
-  height: 50px;
-  border: 1px solid red;
-  margin: 20px auto;
+  /* width: 50px;
+  height: 50px; */
+  animation: pulse 2s 3s ease-out infinite;
+  /* border: 1px solid red; */
+  /* margin: 20px auto; */
+  position: absolute;
+  bottom: 4vh;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+}
+
+.arrow-down i {
+  color: var(--title);
+  animation: fade-slide-up 1s 1s ease-out forwards
+              ;
+  opacity: 0;
 }
 
 .section-2 {
@@ -318,6 +411,7 @@ section {
   font-size: clamp(1.3rem, 5vw, 2rem);
   margin: 20px 0;
   color: var(--title);
+  text-align: center;
 }
 
 .section-2 img {
@@ -362,10 +456,16 @@ section {
 .tech i {
   color: var(--title);
 }
+
+.section-3 .section-container {
+  width: inherit;
+}
+
 .section-3 h1 {
   font-size: clamp(1.3rem, 5vw, 2rem);
   color: var(--title);
   margin: 20px 0;
+  text-align: center;
 }
 
 .grid {
@@ -384,7 +484,8 @@ section {
 }
 
 button {
-  margin: 20px;
+  margin: 20px auto;
+  display: block;
   border: none;
   padding: 15px 35px;
   background-color: var(--title);
@@ -488,6 +589,64 @@ form {
   position: relative;
   z-index: 11;
 } */
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: translate(-4rem) scale(.8); 
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+  50% {
+    opacity: .8;
+    transform: scale(.8);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+
+
+
+
+
+
 
 
 @media screen and (max-width: 375px) {
