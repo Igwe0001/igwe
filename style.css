@@ -466,9 +466,7 @@ section {
   height: auto;
 } 
 
-.projects-grid:hover {
-  transform: scale(1.2)
-}
+
 
 .projects-grid .write-up {
   color: var(--title);
@@ -667,4 +665,8 @@ button a {
   .section-1-socials {
     display: none;
   }
+
+  .projects-grid:hover {
+  transform: scale(1.2)
+}
 }
