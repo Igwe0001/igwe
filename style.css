@@ -455,7 +455,25 @@ section {
 .projects-grid {
   width: 300px;
   height: 300px;
-  outline: 1px solid var(--title);
+  text-decoration: none;
+  transition: all .2s ease;
+ box-shadow: 0 0 20px 0 var(--box-shadow);
+  background-color: var(--Background-color);
+}
+
+.projects-grid img {
+  width: 100%;
+  height: auto;
+} 
+
+.projects-grid:hover {
+  transform: scale(1.2)
+}
+
+.projects-grid .write-up {
+  color: var(--title);
+  text-align: center;
+
 }
 
 button {
