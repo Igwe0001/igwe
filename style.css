@@ -415,7 +415,7 @@ section.show {
   outline: 1px solid white;
   transition: all 0.2s ease;
   padding: 1rem;
-  flex: 0 0 22rem;
+  flex: 0 0 100%;
   border-radius: 1rem;
 }
 
@@ -761,6 +761,10 @@ button a {
 
   .arrow-down {
     display: inline-block;
+  }
+
+  .service{
+    flex: 0 0 22rem;
   }
 }
 
