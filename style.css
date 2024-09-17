@@ -10,12 +10,14 @@
 
   /* Body */
   --loader-bg: #1c273a;
-  --Background-color: #2d2e32;
+  /* --Background-color: #2d2e32; */
+  --Background-color: black;
+
   --box-shadow: rgb(17, 15, 15);
 
   /* Main  */
 
-  --Main-color: antiquewhite;
+  --Main-color: white;
   --title: rgba(28, 232, 229);
 }
 
@@ -336,6 +338,14 @@ section.show {
   margin: 20px 0;
   line-height: 35px;
   color: antiquewhite;
+}
+
+.text-1 .name {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+}
+
+.text-1 .job {
+  font-size: clamp(2.5rem, 7vw, 5rem);
 }
 
 .section-1-socials {
@@ -763,7 +773,7 @@ button a {
     display: inline-block;
   }
 
-  .service{
+  .service {
     flex: 0 0 22rem;
   }
 }
